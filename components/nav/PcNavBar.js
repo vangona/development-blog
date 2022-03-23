@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export default function NavBar() {
+export default function PcNavBar() {
   const router = useRouter();
 
   return (
     <nav>
       <h1>
-        관경이의 뽀짝한 개발 블로그
+        관경이의 뽀짝한 개발 블로그 Pc
       </h1>
       <div>
         <Link href="/">
@@ -16,7 +16,7 @@ export default function NavBar() {
         <Link href="/board/algorithm">
           <a className={router.pathname === "/board/algorithm" ? "active" : ""}>알고리즘</a>
         </Link>
-        <a>
+        <div className="dropdown-btn">
           언어
           <ul>
             <li>
@@ -35,8 +35,8 @@ export default function NavBar() {
               </Link>
             </li>
           </ul>
-        </a>
-        <a>
+        </div>
+        <div className="dropdown-btn">
           강의
           <ul>
             <li>
@@ -50,7 +50,7 @@ export default function NavBar() {
               </Link>
             </li>
           </ul>
-        </a>
+        </div>
         <Link href="/board/development-env">
           <a className={router.pathname === "/board/development-env" ? "active" : ""}>코딩과 인문학</a>
         </Link>
@@ -72,7 +72,7 @@ export default function NavBar() {
           max-width: 100px;
           margin-bottom: 5px;
         }
-        nav a {
+        nav a, .dropdown-btn {
           font-weight: 600;
           font-size: 18px;
         }
@@ -83,10 +83,10 @@ export default function NavBar() {
           display: flex;
           gap: 20px;
         }
-        a:hover {
+        a, .dropdown-btn:hover {
           cursor: pointer;
         }
-        a:hover ul {
+        .dropdown-btn:hover ul {
           display: flex;
         }
         ul {
@@ -96,7 +96,7 @@ export default function NavBar() {
           margin: 0;
           padding: 10px;
           flex-direction: column;
-          transform: translateX(-10px);
+          transform: translateX(-10px) translateY(20px);
           border-radius: 10px;
         }
         ul:hover {
