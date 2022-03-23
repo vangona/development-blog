@@ -1,7 +1,9 @@
+import QuillEditor from "components/post/QuillEditor";
+
 export default function CreatePost() {
   return (
     <div>
-      1
+      <QuillEditor />
     </div>
   )
 }
