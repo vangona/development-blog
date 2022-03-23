@@ -1,7 +1,11 @@
+import { useRouter } from "next/router"
+
 export default function ReadPost() {
+  const router = useRouter();
+
   return (
     <div>
-      read
+      {router.query.id}
     </div>
   )
 }
